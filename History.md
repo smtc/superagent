@@ -1,3 +1,42 @@
+0.20.0 / 2014-10-02
+==================
+
+ * Add toJSON() to request and response instances. (yields)
+ * Prevent HEAD requests from getting parsed. (gjohnson)
+ * Update debug. (TooTallNate)
+
+0.19.1 / 2014-09-24
+==================
+
+ * Fix basic auth issue when password is falsey value. (gjohnson)
+
+0.19.0 / 2014-09-24
+==================
+
+ * Add unset() to browser. (shesek)
+ * Prefer XHR over ActiveX. (omeid)
+ * Catch parse errors. (jacwright)
+ * Update qs dependency. (wercker)
+ * Add use() to node. (Financial-Times)
+ * Add response text to errors. (yields)
+ * Don't send empty cookie headers. (undoZen)
+ * Don't parse empty response bodies. (DveMac)
+ * Use hostname when setting cookie host. (prasunsultania)
+
+0.18.2 / 2014-07-12
+==================
+
+ * Handle parser errors. (kof)
+ * Ensure not to use default parsers when there is a user defined one. (kof)
+
+0.18.1 / 2014-07-05
+==================
+
+ * Upgrade cookiejar dependency (juanpin)
+ * Support image mime types (nebulade)
+ * Make .agent chainable (kof)
+ * Upgrade debug (TooTallNate)
+ * Fix docs (aheckmann)
 
 0.18.0 / 2014-04-29
 ===================
