@@ -1,4 +1,6 @@
-# SuperAgent
+# SuperAgent [![Build Status](https://travis-ci.org/visionmedia/superagent.svg?branch=master)](https://travis-ci.org/visionmedia/superagent)
+
+[![Sauce Test Status](https://saucelabs.com/browser-matrix/shtylman-superagent.svg)](https://saucelabs.com/u/shtylman-superagent)
 
   SuperAgent is a small progressive __client-side__ HTTP request library, and __Node.js__ module with the same API, sporting many high-level HTTP client features. View the [docs](http://visionmedia.github.com/superagent/).
 
@@ -117,15 +119,17 @@ For superagent extensions such as couchdb and oauth visit the [wiki](https://git
 
 ## Running browser tests
 
- Install the test server deps (nodejs / express):
+ Install dependencies:
 
     $ npm install
 
- Start the test server:
+ Start the test runner:
 
-    $ make test-server
+    $ make test-browser-local
 
- Visit `localhost:4000/` in the browser.
+ Visit `http://localhost:4000/__zuul` in your browser.
+
+ Edit tests and refresh your browser. You do not have to restart the test runner.
 
 ## Browser build
 

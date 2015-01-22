@@ -3,13 +3,14 @@ var EventEmitter = require('events').EventEmitter
   , request = require('../../')
   , express = require('express')
   , assert = require('assert')
-  , app = express();
+  , app = express()
+  , basicAuth = require('basic-auth-connect');
 
-app.get('/', express.basicAuth('tobi', 'learnboost'), function(req, res){
+app.get('/', basicAuth('tobi', 'learnboost'), function(req, res){
   res.end('you win!');
 });
 
-app.get('/again', express.basicAuth('tobi', ''), function(req, res){
+app.get('/again', basicAuth('tobi', ''), function(req, res){
   res.end('you win again!');
 });
 
@@ -20,7 +21,7 @@ describe('Basic auth', function(){
     it('should set Authorization', function(done){
       request
       .get('http://tobi:learnboost@localhost:3010')
-      .end(function(res){
+      .end(function(err, res){
         res.status.should.equal(200);
         done();
       });
@@ -32,7 +33,7 @@ describe('Basic auth', function(){
       request
       .get('http://localhost:3010')
       .auth('tobi', 'learnboost')
-      .end(function(res){
+      .end(function(err, res){
         res.status.should.equal(200);
         done();
       });
@@ -44,7 +45,7 @@ describe('Basic auth', function(){
       request
       .get('http://localhost:3010/again')
       .auth('tobi')
-      .end(function(res){
+      .end(function(err, res){
         res.status.should.eql(200);
         done();
       });
